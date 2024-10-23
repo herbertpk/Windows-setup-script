@@ -32,15 +32,16 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Search" /v "SearchboxTas
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "AppsUseLightTheme" /t REG_DWORD /d 0 /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "SystemUsesLightTheme" /t REG_DWORD /d 0 /f
 
+:: Refresh Explorer to apply changes
+taskkill /f /im explorer.exe
+start explorer.exe
+
+
 :: Set the downloaded image as wallpaper
 reg add "HKCU\Control Panel\Desktop" /v "Wallpaper" /t REG_SZ /d "%imageFile%" /f
 
 :: Update the wallpaper immediately
 RUNDLL32.EXE user32.dll, UpdatePerUserSystemParameters ,1 ,True
-
-:: Refresh Explorer to apply changes
-taskkill /f /im explorer.exe
-start explorer.exe
 
 echo Changes applied successfully!
 pause
