@@ -1,7 +1,7 @@
 @echo off
 
 :: Set the folder to save the downloaded wallpaper
-set "imageUrl=https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Frzxjvaufvf9a1.jpg"
+set "imageUrl=https://i.redd.it/rzxjvaufvf9a1.jpg"
 set "imageFolder=%USERPROFILE%\Pictures\Wallpapers"
 set "imageFile=%imageFolder%\wallpaper.jpg"
 
